@@ -31,6 +31,11 @@ public class Product {
         return p.getName().toUpperCase(); // Retorna o nome do produto em caixa alta
     }
 
+    // Método não estático para converter o nome do produto em caixa alta
+    public String nonStaticUpperCaseName() {
+        return name.toUpperCase();
+    }
+
     // Método toString para representar o produto como uma string
     @Override
     public String toString() {

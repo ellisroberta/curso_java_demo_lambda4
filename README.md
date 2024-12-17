@@ -30,6 +30,8 @@ O programa demonstra como usar a programação funcional em Java para manipular 
 
 ## Reference method com método estático
 
+### Explicação das Modificações
+
 - Método Estático `staticUpperCaseName`:
   - Um novo método estático foi adicionado à classe `Product`. Este método aceita um objeto `Product` como parâmetro e
 retorna o nome do produto em caixa alta.
@@ -43,3 +45,25 @@ da classe `Product`. Isso torna o código mais limpo e elimina a necessidade de 
 Essa abordagem simplifica o código e mantém a lógica de transformação relacionada à classe `Product`, facilitando a
 leitura e a manutenção. Além disso, usar referências de método é uma prática recomendada quando se trabalha com streams 
 em Java, pois melhora a legibilidade do código.
+
+## Reference method com método não estático
+
+### Explicação das Modificações
+
+- Uso do Método Não Estático:
+  - O método `nonStaticUpperCaseName` é um método de instância, o que significa que ele deve ser chamado em uma instância
+da classe `Product`.
+  - Na expressão de stream, você pode usar `Product::nonStaticUpperCaseName`, mas isso é válido apenas se você estiver
+  passando uma instância de `Product`. Como este método não é estático, o código atual já está correto e funcional.
+
+- Referência de Método:
+  O uso de `Product::nonStaticUpperCaseName` como referência de método é apropriado, pois a expressão `map` é aplicada a
+cada elemento da lista `list`, que é uma coleção de `Product`. O método é chamado em cada instância individual da classe `Product`.
+
+### Observações
+  Quando você usa um método não estático, a referência de método é resolvida em tempo de execução e chamada na instância correta.
+Essa abordagem é uma prática comum em programação funcional e melhora a legibilidade do código, tornando-o mais expressivo.
+
+### Conclusão
+  O código agora utiliza corretamente um método não estático para transformar o nome dos produtos em caixa alta,
+demonstrando como referenciar métodos de instância em streams. Essa prática é vantajosa para manter o código limpo e fácil de entender.
