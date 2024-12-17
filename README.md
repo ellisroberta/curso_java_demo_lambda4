@@ -93,3 +93,34 @@ método `getName` do objeto `Product` e converte o nome em caixa alta.
 O uso de expressões lambda torna o código mais conciso e claro, permitindo a transformação de dados de maneira funcional.
 Este estilo é comum em Java 8 e versões posteriores, onde as streams e lambdas proporcionam uma maneira poderosa de trabalhar
 com coleções de dados.
+
+## Expressão lambda inline
+
+### Detalhes sobre a Expressão Lambda Inline
+
+- Definição da Lambda:
+  - A expressão lambda `p -> p.getName().toUpperCase()` é definida diretamente dentro do método `map`.
+Isso significa que não há necessidade de criar uma variável adicional para armazenar a função, o que simplifica o código.
+
+- Parâmetro `p`:
+  O parâmetro `p` representa uma instância de `Product` que está sendo processada na stream.
+A lambda é chamada para cada elemento da lista, permitindo a manipulação de cada `Product` individualmente.
+
+- Transformação:
+  O corpo da lambda `p.getName().toUpperCase()` chama o método getName na instância de `Product` e transforma o nome do 
+produto para caixa alta. O resultado é uma `String` que representa o nome em caixa alta.
+
+- Uso com Streams:
+  A expressão lambda é parte do fluxo de processamento de dados na stream. O método `map` aplica a transformação a cada
+elemento da lista original, produzindo uma nova stream de nomes em caixa alta.
+
+- Coleta dos Resultados:
+  `collect(Collectors.toList())` é utilizado para coletar os resultados da stream em uma nova lista, que é armazenada na variável `names`.
+
+- Impressão dos Resultados:
+  Finalmente, `names.forEach(System.out::println)` é usado para imprimir cada nome em caixa alta no console.
+
+### Conclusão
+  A utilização de expressões lambda inline é uma prática comum e recomendada em Java, especialmente ao trabalhar com streams. 
+Elas tornam o código mais conciso e fácil de ler, eliminando a necessidade de declarações de variáveis adicionais para funções simples. 
+Esse estilo de programação funcional é uma das características que tornam o Java 8 e versões posteriores mais poderosos e expressivos.
