@@ -67,3 +67,29 @@ Essa abordagem é uma prática comum em programação funcional e melhora a legi
 ### Conclusão
   O código agora utiliza corretamente um método não estático para transformar o nome dos produtos em caixa alta,
 demonstrando como referenciar métodos de instância em streams. Essa prática é vantajosa para manter o código limpo e fácil de entender.
+
+## Expressão lambda declarada
+
+### Detalhes sobre a Expressão Lambda
+
+- Importação da Interface Function:
+  A interface `Function` é uma interface funcional que aceita um argumento e produz um resultado.
+No caso, ela recebe um objeto do tipo `Product` e retorna uma `String`.
+
+- Definição da Lambda:
+  - A expressão lambda `p -> p.getName().toUpperCase()` é uma implementação da interface `Function<Product, String>.`
+  - Aqui, `p` representa uma instância de `Product`. A expressão dentro da lambda `(p.getName().toUpperCase())` chama o
+método `getName` do objeto `Product` e converte o nome em caixa alta.
+
+- Uso da Lambda com Streams:
+  - A expressão lambda é passada como argumento para o método `map` da stream. Isso transforma cada `Product` na lista 
+`list` em uma `String` que representa o nome do produto em caixa alta.
+  - Em seguida, `collect(Collectors.toList())` coleta os resultados em uma nova lista chamada `names`.
+
+- Impressão dos Resultados:
+  A lista `names` é percorrida com `forEach(System.out::println)` para imprimir cada nome no console.
+
+### Conclusão
+O uso de expressões lambda torna o código mais conciso e claro, permitindo a transformação de dados de maneira funcional.
+Este estilo é comum em Java 8 e versões posteriores, onde as streams e lambdas proporcionam uma maneira poderosa de trabalhar
+com coleções de dados.
