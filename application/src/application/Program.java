@@ -20,7 +20,7 @@ public class Program {
 
         // Usando stream para transformar a lista de produtos em uma lista de nomes em caixa alta
         List<String> names = list.stream()
-                .map(new UpperCaseName()) // Aplica a função de conversão para cada produto
+                .map(Product::staticUpperCaseName) // Chamando o método estático da classe Product
                 .collect(Collectors.toList()); // Coleta o resultado em uma nova lista
         // 'collect(toList())' pode ser substituído por 'toList()'
 

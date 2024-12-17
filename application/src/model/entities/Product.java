@@ -26,6 +26,11 @@ public class Product {
         this.price = price;
     }
 
+    // Método estático para converter o nome do produto em caixa alta
+    public static String staticUpperCaseName(Product p) {
+        return p.getName().toUpperCase(); // Retorna o nome do produto em caixa alta
+    }
+
     // Método toString para representar o produto como uma string
     @Override
     public String toString() {
